@@ -1,0 +1,106 @@
+<Window 
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+    d:DesignWidth="1280" 
+    d:DesignHeight="720"
+    Width="1280"
+    Height="720"
+    MinWidth="1280"
+    MinHeight="720"
+    x:Class="face_project.MainWindow"
+    Title="Face Application"
+>
+    <Viewbox Stretch="Uniform">
+        <Grid 
+            Background="White" 
+            ShowGridLines="False" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            ColumnDefinitions="420,20,420"
+            RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+        >
+            
+            <TextBox 
+                Name="subscriptionKeyTextBox"
+                Grid.Row="0" 
+                Grid.Column="0"
+                Margin="10"
+                Watermark="Subscription Key" 
+            />
+            <TextBox 
+                Name="endpointTextBox"
+                Grid.Row="0" 
+                Grid.Column="2"
+                Margin="10"
+                Watermark="Endpoint" 
+            />
+            <Canvas 
+                Name="faceCanvas"
+                Grid.Row="1" 
+                Grid.Column="0"
+                Background="#fafafa"
+                Height="320"
+                Width="420"
+            >
+                <Image
+                    Margin="10"
+                    Name="image"
+                    Height="300"
+                    Width="400"
+                />
+            </Canvas>
+            <TextBlock 
+                Name="textBlock"
+                Grid.Row="2" 
+                Grid.Column="0"
+                FontSize="14"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="10"
+            >
+                Select an image!
+            </TextBlock>
+            <Button 
+                Grid.Row="3" 
+                Grid.Column="0" 
+                VerticalAlignment="Top" 
+                Click="SelectImage_Click" 
+                Width="300" 
+                Margin="10"
+            >
+                Select image
+            </Button>
+            <Button 
+                Grid.Row="4" 
+                Grid.Column="0" 
+                VerticalAlignment="Top" 
+                Click="Submit_Click" 
+                Width="300" 
+                Margin="10"
+            >
+                Submit
+            </Button>
+            <ScrollViewer
+                Grid.Row="1" 
+                Grid.Column="2" 
+                Grid.RowSpan="5" 
+                Height="480"
+            >
+                <Border 
+                    Background="#fafafa"
+                    Padding="20"
+                    Margin="5"
+                >
+                    <TextBlock 
+                        Name="consoleTextBlock"
+                        FontSize="12"
+                        TextWrapping="Wrap"
+                    />
+                </Border>
+            </ScrollViewer>
+        </Grid>
+    </Viewbox>
+</Window>
